@@ -5,10 +5,10 @@ const GlobalStyle=createGlobalStyle`
 body{
     margin:0;
     padding:0;
-    background:black;
+    background:white;
     font-family: Open-Sans, Helvetica, Sans-Serif;
     font-size:16px;
-    color:white;
+    color:black;
 }
 h1{
     font-size:1.8rem !important;
