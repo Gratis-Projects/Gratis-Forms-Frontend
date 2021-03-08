@@ -1,0 +1,17 @@
+import React from "react";
+import { PrimaryButton } from "./components/buttons";
+import Loader from "./components/Loader";
+const TestComp = () => {
+  return (
+    <div>
+      <h1>h1 heading</h1>
+      <h2>h2 heading</h2>
+      <h3>h3 heading</h3>
+      <h4>h4 heading</h4>
+      <Loader/>
+      <PrimaryButton>Hello world</PrimaryButton>
+    </div>
+  );
+};
+
+export default TestComp;
