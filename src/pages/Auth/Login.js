@@ -37,7 +37,9 @@ const Login = ({ location, history }) => {
       <Container>
         <Row>
           <Col sm={6}>
+
             <Form onSubmit={loginHandler}>
+              <h2>Sign in</h2>
               <Form.Group controlId="email">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="input"  value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="your email id" />
