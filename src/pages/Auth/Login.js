@@ -9,8 +9,8 @@ import Loader from "../../components/Loader";
 const Login = ({ location, history }) => {
   const dispatch = useDispatch();
 
-  const [email,setEmail]=useState('');
-  const [password,setPassword]=useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
 
@@ -22,14 +22,14 @@ const Login = ({ location, history }) => {
     }
   }, [userInfo, redirect, history]);
 
-  const loginHandler=(e)=>{
-      e.preventDefault();
-      const user={
-          email,password
-      }
-      dispatch(login(user))
-
-  }
+  const loginHandler = (e) => {
+    e.preventDefault();
+    const user = {
+      email,
+      password,
+    };
+    dispatch(login(user));
+  };
   return (
     <>
       {loading && <Loader />}
@@ -37,19 +37,28 @@ const Login = ({ location, history }) => {
       <Container>
         <Row>
           <Col sm={6}>
-
             <Form onSubmit={loginHandler}>
               <h2>Sign in</h2>
               <Form.Group controlId="email">
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="input"  value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="your email id" />
+                <Form.Control
+                  type="input"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="your email id"
+                />
               </Form.Group>
               <Form.Group controlId="password">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" alue={password} onChange={(e)=>setPassword(e.target.value)} placeholder=' your password' />
+                <Form.Control
+                  type="password"
+                  alue={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder=" your password"
+                />
               </Form.Group>
               <Form.Group controlId="login">
-                <PrimaryButton type='submit'>Login</PrimaryButton>
+                <PrimaryButton type="submit">Login</PrimaryButton>
               </Form.Group>
             </Form>
           </Col>
