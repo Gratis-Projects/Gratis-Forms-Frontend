@@ -1,4 +1,4 @@
-import {USER_LOGIN_FAIL,USER_LOGIN_SUCCESS,USER_LOGIN_REQUEST } from '../constants/userConstants';
+import {USER_LOGIN_FAIL,USER_LOGIN_SUCCESS,USER_LOGIN_REQUEST,USER_LOGOUT } from '../constants/userConstants';
 import axios from 'axios';
 
 
@@ -23,3 +23,15 @@ export const login=(user=>async(dispatch)=>{
           });
     }
 })
+
+export const logout=()=>{return async (dispatch,getState)=>{
+    try {
+  
+        localStorage.removeItem("userInfo");
+        dispatch({ type: USER_LOGOUT });
+        document.location.href = "/login";
+      } catch (err) {
+        console.error(err);
+      }
+}
+}
