@@ -5,8 +5,10 @@ import {
   USER_REGISTER_FAIL,
   USER_REGISTER_SUCCESS,
   USER_REGISTER_REQUEST,
+  USER_LOGOUT
 } from "../constants/userConstants";
 import axios from "axios";
+
 
 export const login = (user) => async (dispatch) => {
   try {
@@ -58,4 +60,16 @@ export const register = (user) => async (dispatch) => {
           : error.response.error,
     });
   }
+};
+
+export const logout = () => {
+  return async (dispatch, getState) => {
+    try {
+      localStorage.removeItem("userInfo");
+      dispatch({ type: USER_LOGOUT });
+      document.location.href = "/login";
+    } catch (err) {
+      console.error(err);
+    }
+  };
 };
