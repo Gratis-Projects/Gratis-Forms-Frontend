@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import TestComp from "./TestComp";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import ValidateUser from "./pages/Auth/ValidateUser";
 import { PrimaryButton } from "./components/buttons";
 import { useDispatch } from "react-redux";
 import { logout } from "./redux/actions/userActions";
@@ -39,6 +40,7 @@ function App() {
       <Route exact path="/test" component={TestComp} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
+      <Route exact path="/validateuser/:token" component={ValidateUser} />
     </Router>
   );
 }
